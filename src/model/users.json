@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "username": "tohir",
+        "password": "aaaaaa",
+        "phone": "998906696603",
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "username": "tohir",
+        "password": "bbbbbb",
+        "phone": "998906696604",
+        "role": "teacher",
+        "course": "web"
+    },
+    {
+        "id": 3,
+        "username": "tohir",
+        "password": "dddddd",
+        "phone": "998906696605",
+        "role": "student",
+        "course": "foundation",
+        "group": "N17"
+    }
+]
