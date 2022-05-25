@@ -2,25 +2,65 @@
     {
         "id": 1,
         "username": "tohir",
-        "password": "aaaaaa",
+        "password": "aaaaaaaa",
         "phone": "998906696603",
-        "role": "admin"
+        "role": "admin",
+        "profilePhoto": ""
     },
     {
         "id": 2,
         "username": "tohir",
-        "password": "bbbbbb",
+        "password": "bbbbbbbb",
         "phone": "998906696604",
         "role": "teacher",
-        "course": "web"
+        "course": "web",
+        "profilePhoto": ""
     },
     {
-        "id": 3,
-        "username": "tohir",
-        "password": "dddddd",
+        "id": 4,
+        "username": "mashrab",
+        "password": "11111111",
+        "phone": "998999999999",
+        "role": "teacher",
+        "course": "photoshop",
+        "profilePhoto": ""
+    },
+    {
+        "id": 5,
+        "username": "javhar",
+        "password": "eeeeeeee",
+        "phone": "998900512004",
+        "role": "teacher",
+        "course": "foundation",
+        "profilePhoto": ""
+    },
+    {
+        "id": 6,
+        "username": "alimardon",
+        "password": "dddddddd",
         "phone": "998906696605",
         "role": "student",
         "course": "foundation",
-        "group": "N17"
+        "group": "N17",
+        "profilePhoto": ""
+    },
+    {
+        "id": 7,
+        "username": "tohirjondo",
+        "password": "111222",
+        "phone": "9986696603",
+        "role": "teacher",
+        "course": "photoshop",
+        "profilePhoto": ""
+    },
+    {
+        "id": 8,
+        "username": "Tohir",
+        "password": "111222",
+        "phone": "9986696603",
+        "role": "student",
+        "course": "web",
+        "group": "W2",
+        "profilePhoto": ""
     }
 ]

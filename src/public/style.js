@@ -1,29 +1,3 @@
-//NAVBAR JS
-document.querySelector(".jsFilter").addEventListener("click", function () {
-  document.querySelector(".filter-menu").classList.toggle("active");
-});
-
-document.querySelector(".grid").addEventListener("click", function () {
-  document.querySelector(".list").classList.remove("active");
-  document.querySelector(".grid").classList.add("active");
-  document.querySelector(".products-area-wrapper").classList.add("gridView");
-  document
-    .querySelector(".products-area-wrapper")
-    .classList.remove("tableView");
-});
-
-document.querySelector(".list").addEventListener("click", function () {
-  document.querySelector(".list").classList.add("active");
-  document.querySelector(".grid").classList.remove("active");
-  document.querySelector(".products-area-wrapper").classList.remove("gridView");
-  document.querySelector(".products-area-wrapper").classList.add("tableView");
-});
-
-var modeSwitch = document.querySelector('.mode-switch');
-modeSwitch.addEventListener('click', function () {                                        document.documentElement.classList.toggle('light');
- modeSwitch.classList.toggle('active');
-});
-
 //ADD BTNS
 const elAddTeachers = document.querySelector(".add_teachers")
 const elAddStudent = document.querySelector(".add_student")
@@ -35,7 +9,7 @@ const elLinkStudent = document.querySelector("#Student")
 const elLinkGroups = document.querySelector("#Groups")
 const elLinkCourses = document.querySelector("#Courses")
 
-const elSideBarList = document.querySelector(".sidebar-list")
+const elSideBarList = document.querySelector(".nav-list")
 
 elSideBarList.addEventListener("click", e => {
   if(e.target.matches(".sideBar_btn")){
@@ -105,4 +79,58 @@ elSideBarList.addEventListener("click", e => {
       elAddCourses.classList.add("d-block")
     }
   }
+})
+
+
+//MODAl
+let elFormChangeTeacher = document.querySelector(".form__change-teacher")
+let elTeacherAddBtn = document.querySelector(".teacher__addBtn")
+
+let elFormChangeTables = document.querySelector(".form__change-courses")
+let elCoursesAddBtn = document.querySelector(".courses__addBtn")
+
+let elFormChangeGroups = document.querySelector(".form__change-groups")
+let elGroupsAddBtn = document.querySelector(".groups__addBtn")
+
+let elFormChangStudent = document.querySelector(".form__change-student")
+let elStudentAddBtn = document.querySelector(".student__addBtn")
+
+let elBodyBgTeacher = document.querySelector('.hidden__teacher');
+let elBodyBgGroups = document.querySelector('.hidden__groups');
+let elBodyBgCourses = document.querySelector('.hidden__courses');
+let elBodyBgStudent = document.querySelector('.hidden__student');
+
+elTeacherAddBtn.addEventListener("click", e => {
+  elFormChangeTeacher.classList.remove("d-none")
+  elBodyBgTeacher.setAttribute('class', 'overlay')
+})
+elCoursesAddBtn.addEventListener("click", e => {
+  elFormChangeTables.classList.remove("d-none")
+  elBodyBgCourses.setAttribute('class', 'overlay')
+})
+elStudentAddBtn.addEventListener("click", e => {
+  elFormChangStudent.classList.remove("d-none")
+  elBodyBgStudent.setAttribute('class', 'overlay')
+})
+elGroupsAddBtn.addEventListener("click", e => {
+  elFormChangeGroups.classList.remove("d-none")
+  elBodyBgGroups.setAttribute('class', 'overlay')
+})
+
+
+elBodyBgTeacher.addEventListener('click', function() {
+  elFormChangeTeacher.classList.add("d-none")
+  elBodyBgTeacher.setAttribute("class", "hidden__bg")
+})
+elBodyBgCourses.addEventListener('click', function() {
+  elFormChangeTables.classList.add("d-none")
+  elBodyBgCourses.setAttribute("class", "hidden__bg")
+})
+elBodyBgGroups.addEventListener('click', function() {
+  elFormChangeGroups.classList.add("d-none")
+  elBodyBgGroups.setAttribute("class", "hidden__bg")
+})
+elBodyBgStudent.addEventListener('click', function() {
+  elFormChangStudent.classList.add("d-none")
+  elBodyBgStudent.setAttribute("class", "hidden__bg")
 })

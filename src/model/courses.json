@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "id": 1,
+        "title": "foundation",
+        "desc": "Yaxshi foundation",
+        "price": "1000 000so'm"
+    },
+    {
+        "id": 2,
+        "title": "web",
+        "desc": "Yaxshi web dasturlash",
+        "price": "700 000so'm"
+    },
+    {
+        "id": 3,
+        "title": "ux/ui",
+        "desc": "Yaxshi UX/UI",
+        "price": "400 000so'm"
+    },
+    {
+        "id": 4,
+        "title": "photoshop",
+        "desc": "Yaxshi Photoshop",
+        "price": "550 000so'm"
+    }
+]

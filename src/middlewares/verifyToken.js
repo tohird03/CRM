@@ -3,7 +3,6 @@ const { read, write } = require("../utils/FS")
 
 module.exports = (req, res, next) => {
     const { token } = req.cookies
-    console.log(token);
     if(!token) {
         return res.redirect('/')
     }
