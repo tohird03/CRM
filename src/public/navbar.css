@@ -138,6 +138,7 @@ body {
 }
 .sideBar_btn.active {
   background-color: var(--sidebar-active-link);
+  display: flex;
 }
 .sidebar-list-item.active:before {
   content: "";
@@ -1346,114 +1347,7 @@ button {
   cursor: pointer;
 }
 
-@media screen and (max-width: 1350px) {
-  .app-right {
-    flex-basis: 240px;
-    width: 240px;
-  }
-
-  .app-left {
-    flex-basis: 200px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .app-right {
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    z-index: 2;
-    height: 100%;
-    width: 320px;
-    right: -100%;
-    box-shadow: 0 0 10px 5px rgba(1, 8, 31, 0.4);
-  }
-  .app-right .close-right {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    color: var(--main-color);
-    cursor: pointer;
-  }
-
-  .app-main .open-right-area {
-    display: flex;
-    color: var(--main-color);
-  }
-}
-@media screen and (max-width: 1180px) {
-  .chart-row.two {
-    flex-direction: column;
-  }
-
-  .chart-row.two .big {
-    max-width: 100%;
-  }
-
-  .chart-row.two .small {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .chart-row.two .small .chart-container {
-    width: calc(50% - 8px);
-  }
-  .chart-row.two .small .chart-container.applicants {
-    margin-top: 0;
-  }
-}
-@media screen and (max-width: 920px) {
-  .menu-button {
-    display: flex;
-  }
-
-  .app-left {
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    z-index: 2;
-    height: 100%;
-    width: 320px;
-    right: -100%;
-    box-shadow: 0 0 10px 5px rgba(1, 8, 31, 0.4);
-  }
-
-  .close-menu {
-    display: flex;
-  }
-}
-@media screen and (max-width: 650px) {
-  .chart-row.three {
-    flex-direction: column;
-  }
-
-  .chart-row.three .chart-container-wrapper {
-    width: 100%;
-  }
-
-  .chart-svg {
-    min-height: 60px;
-    min-width: 40px;
-  }
-}
-@media screen and (max-width: 520px) {
-  .chart-row.two .small {
-    flex-direction: column;
-  }
-
-  .chart-row.two .small .chart-container {
-    width: 100%;
-  }
-  .chart-row.two .small .chart-container.applicants {
-    margin-top: 16px;
-  }
-
-  .main-header-line h1 {
-    font-size: 14px;
-  }
+.isNotHomewroks {
+  display: flex;
+  align-items: center;
 }

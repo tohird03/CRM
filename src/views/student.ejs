@@ -1,2 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/navbar.css">
+    <link rel="stylesheet" href="/assets/style.css">
 
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="app-container">
+        <%- include("./partials/sidebar.ejs", { navlink: [ {iconName: "school" , linkName: "Student" ,
+            isActive: "active" }, {iconName: "library_books" , linkName: "Homework" , isActive: "" } ]})%>
+
+            <!-- STUDENT -->
+            <div class="app-main student">
+                <div class="main-header-line">
+                    <div class="app-content-header">
+                        <h1 class="app-content-headerText ">STUDENT</h1>
+                    </div>
+                </div>
+
+                <!-- Table content -->
+                <div class="app-content">
+                    <div class="products-area-wrapper tableView">
+                        <div class="products-header">
+                            <div class="product-cell image t-center">Student Name</div>
+                            <div class="product-cell image t-center">Course Title</div>
+                            <div class="product-cell category t-center">Group</div>
+                            <div class="product-cell stock t-center">Status</div>
+                            <div class="product-cell stock t-center">Student Phone </div>
+                        </div>
+
+                        <div class="products-row">
+                            <div class="product-cell image">
+
+                                <span>
+                                    <%= foundUser?.username.slice(0, 1)?.toUpperCase() + foundUser?.username?.slice(1)
+                                        %>
+                                </span>
+                            </div>
+                            <div class="product-cell image">
+                                <span>
+                                    <%= foundUser?.course?.slice(0, 1)?.toUpperCase() + foundUser?.course?.slice(1) %>
+                                </span>
+                            </div>
+
+                            <div class="product-cell image">
+                                <span>
+                                    <%= foundUser?.group?.slice(0, 1)?.toUpperCase() + foundUser?.group?.slice(1) %>
+                                </span>
+                            </div>
+
+                            <div class="product-cell status-cell">
+                                <span class="cell-label">Status:</span>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="product-cell stock"><span class="cell-label">Stock:</span>
+                                <span>
+                                    +<%= foundUser?.phone %>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STUDENT -->
+            <div class="app-main homework_student d-none">
+                <div class="main-header-line">
+                    <div class="app-content-header">
+                        <h1 class="app-content-headerText ">HOMEWORK</h1>
+                    </div>
+                </div>
+
+                <div class="homework_student-Add">
+
+                    <% if(studentHomeTaskIsNot.length> 0){ %>
+                        <h1>Bajarilmagan uyga vazifalar <%= studentHomeTaskIsNot.length %> ta </h1>
+                        <% studentHomeTaskIsNot?.map(e=> { %>
+                            <div>
+                                <p>
+                                    BERILDI: <%= e?.date %>
+                                </p>
+                                <div>
+                                    <h3>
+                                        Title <%= e?.title %>
+                                    </h3>
+                                    <p>
+                                        Homework about <%= e?.desc %>
+                                    </p>
+                                </div>
+
+                                <button id=<%=e?.id + "/" + foundUser?.id %> class="homework">
+                                    Homework
+                                </button>
+
+                                <!-- ADD HOMEWORK MODAL FORM -->
+                                <div class="hidden__bg hidden__homework body__close"></div>
+
+                                <div class="form__change-homework form__change p-5 d-none bg-warning">
+                                    <form action="/upload" method="post" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label for="title" class="form-label">Pharmacy title</label>
+
+                                            <input name="title" type="text" class="form-control" id="title" placeholder="Homework title" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="title" class="form-label">Pharmacy title</label>
+
+                                            <input name="homeFile" type="file" class="form-control" id="title" placeholder="Homework file" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="title" class="form-label">Pharmacy title</label>
+
+                                            <textarea class="homework__add" name="desc" placeholder="Homework about" required></textarea>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <input type="text" name="groupId" class="visually-hidden homeworkId">
+                                        </div>
+
+                                        <button id=<%= e?.id %>  style="display: flex; justify-content:flex-end;"
+                                            class="btn btn-success homework__btn courses__add" type="submit">
+                                            Add
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% } %>
+
+                    <!-- Table content -->
+                    <h4 class="green">Bajarilgan vazifalar</h4>
+                    <div class="app-content">
+                        <div class="products-area-wrapper tableView homework__done">
+                            <div class="products-header">
+                                <div class="product-cell image t-center">Homework Title</div>
+                                <div class="product-cell image t-center">Download</div>
+                                <div class="product-cell category t-center">Send date</div>
+                                <div class="product-cell stock t-center">Status</div>
+                                <div class="product-cell stock t-center">Done</div>
+                            </div>
+
+                            <% studentHome?.map(homework=> { %>
+                                <div class="products-row">
+                                    <div class="product-cell image">
+                                        <span>
+                                            <%= homework?.title?.slice(0, 1)?.toUpperCase() + homework?.title?.slice(1) %>
+                                        </span>
+                                    </div>
+                                    <div class="product-cell image">
+                                        <a href=<%= homework?.homeFile %>  class="material-symbols-outlined download_student-homework"  download>
+                                            file_download
+                                        </a>
+                                    </div>
+                                    <div class="product-cell image">
+                                        <span>
+                                            <%= homework.date %>
+
+                                        </span>
+                                    </div>
+
+                                    <div class="product-cell status-cell">
+                                        <span class="cell-label">Status:</span>
+                                        <span class="status active">Active</span>
+                                    </div>
+
+                                    <div class="product-cell stock"><span class="cell-label">Stock:</span>
+                                        <span class="material-symbols-outlined green">
+                                            check_circle
+                                        </span>
+                                    </div>
+                                </div>
+                            <% }) %>
+                        </div>
+                    </div>
+
+                    <h4 class="green">Jami vazifalar</h4>
+                    <div class="app-content">
+                        <div class="products-area-wrapper tableView homework__done">
+                            <div class="products-header">
+                                <div class="product-cell image t-center">Homework Title</div>
+                                <div class="product-cell category t-center">Send date</div>
+                                <div class="product-cell stock t-center">Status</div>
+                                <div class="product-cell stock t-center">Done</div>
+                            </div>
+
+                            <% allHomeworkTrue?.map(homework=> { %>
+                                <div class="products-row">
+                                    <div class="product-cell image">
+                                        <span>
+                                            <%= homework?.title?.slice(0, 1)?.toUpperCase() + homework?.title?.slice(1) %>
+                                        </span>
+                                    </div>
+                                    <div class="product-cell image">
+                                        <span>
+                                            <%= homework.date %>
+                                        </span>
+                                    </div>
+
+                                    <div class="product-cell status-cell">
+                                        <span class="cell-label">Status:</span>
+                                        <% if(homework.send == "true"){ %>
+                                            <span class="status active">Sent</span>
+                                        <% } else { %>
+                                            <span class="status active inactive">Not sent</span>
+                                        <% } %>
+                                    </div>
+
+                                    <div class="product-cell stock"><span class="cell-label">Stock:</span>
+                                        <% if(homework.send == "true"){ %>
+                                            <span class="material-symbols-outlined green">
+                                                check_circle
+                                            </span>
+                                        <% } else { %>
+                                            <span class="material-symbols-outlined error_icon">
+                                                error
+                                            </span>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include("./partials/sidebarRight.ejs", {name: foundUser?.username, role: "Admin" , phone:
+                foundUser?.phone, photo: foundUser?.profilePhoto })%>
+    </div>
+    </div>
+
+    <script src="assets/student.js"></script>
+</body>
+
+</html>

@@ -113,6 +113,17 @@
   padding: 5px;
 }
 
+/* VISUALLY HIDDEN */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 /* MODAL */
 .form__change {
   width: 500px;
@@ -155,4 +166,54 @@
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 50;
+}
+
+.homework__add {
+  resize: none;
+  height: 200px;
+  width: 400px;
+}
+
+.isNotHomewroks {
+  margin-left: auto;
+}
+
+.isNothome {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error_icon {
+  color: red;
+}
+
+.true_homework {
+  color: green;
+}
+
+.green {
+  color: green;
+}
+
+.download_student-homework {
+  cursor: pointer;
+  color: white;
+}
+
+.status.active {
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.status.inactive {
+  background-color: rgb(144, 4, 4);
+  color: white;
 }

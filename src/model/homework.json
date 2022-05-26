@@ -1,1 +1,86 @@
-[]
+[
+    {
+        "id": 12,
+        "groupId": 7,
+        "title": "Socket",
+        "desc": "Qilinglar",
+        "date": "26-05-2022"
+    },
+    {
+        "id": 11,
+        "groupId": 7,
+        "title": "Telegram bot",
+        "desc": "Busndsbausfdauhsfbjabsfuhabsdfuhasd qilmasang so'yaman",
+        "date": "26-05-2022"
+    },
+    {
+        "id": 10,
+        "groupId": 7,
+        "title": "asdasd",
+        "desc": "asdasd",
+        "date": "26-05-2022"
+    },
+    {
+        "id": 9,
+        "groupId": 7,
+        "title": "Qilsalaringchieyey",
+        "desc": "Mayli",
+        "date": "26-05-2022"
+    },
+    {
+        "id": 1,
+        "groupId": 1,
+        "title": "szxczxcad",
+        "desc": "aszxczxczxcd",
+        "date": "26-05-2022"
+    },
+    {
+        "id": 2,
+        "groupId": 6,
+        "title": "sad",
+        "desc": "asd",
+        "date": "26-05-2022"
+    },
+    {
+        "id": 3,
+        "groupId": 7,
+        "title": "sazcxzcxzcxzcxzxcd",
+        "desc": "aszcxzcxcxzzxczcxzxcd",
+        "date": "26-05-2022"
+    },
+    {
+        "id": 4,
+        "groupId": 6,
+        "title": "sazcxzcxzcxzcxzxcd",
+        "desc": "aszcxzcxcxzzxczcxzxcd",
+        "date": "26-05-2022"
+    },
+    {
+        "id": 5,
+        "groupId": 1,
+        "title": "1",
+        "desc": "2",
+        "date": "26-05-2022"
+    },
+    {
+        "id": 6,
+        "groupId": 7,
+        "title": "1",
+        "desc": "2",
+        "date": "26-05-2022"
+    },
+    {
+        "id": 7,
+        "groupId": 7,
+        "title": "qilsangchiiyeye",
+        "desc": "Hop",
+        "date": "26-05-2022"
+    },
+    {
+        "id": 8,
+        "groupId": 7,
+        "title": "hahaha",
+        "desc": "qilinglar",
+        "date": "26-05-2022"
+    }
+]

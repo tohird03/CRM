@@ -11,8 +11,22 @@ const GET_STUDENT = (req, res) => {
         }
 
         const foundUser = read('users.json').find(e => e.id == id)
+        const homework = read("homework.json")
+        const studentHomework = read("studentHomework.json")
+        const groups = read("group.json").filter(e => e.groups == foundUser.group)[0]
 
-        res.render('student', { foundUser })
+        // GROUP HOMEWORK
+        const home = homework.filter(e => groups.id == e.groupId)
+
+        //STUDENT HOMEWORK
+        const studentHome = studentHomework.filter(e => e.studentId == foundUser.id )
+
+        const studentHomeTaskIsNot = home.filter(e => !studentHome.find(d => d.homeworkId == e.id))
+
+        const allHomeworkTrue = home.filter(e => !studentHome.find(d => d.homeworkId == e.id) ? e.send = "false" : studentHome.find(d => d.homeworkId == e.id) ? e.send = "true" : null
+        )
+
+        res.render('student', { foundUser, home, allHomeworkTrue, studentHome, studentHomeTaskIsNot })
     } catch (error) {
         throw new Error(error)
     }

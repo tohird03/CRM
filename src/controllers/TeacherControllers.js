@@ -11,8 +11,14 @@ const GET_TEACHER = (req, res) => {
         }
 
         const foundUser = read('users.json').find(e => e.id == id)
+        const allGroups = read('group.json')
+        const allCourses = read('courses.json')
+        const foundGroups = allGroups.filter(e => e.teachId == foundUser.id ? e.teacher = foundUser : null)
 
-        res.render('teacher', { foundUser })
+        const foundCours = foundGroups.filter(e => allCourses.find(id => id.id == e.coursId) ? e.course = allCourses.find(id => id.id == e.coursId)
+        : e)
+
+        res.render('teacher', { foundUser, foundCours })
     } catch (error) {
         throw new Error(error)
     }
@@ -48,7 +54,7 @@ const TEACHERS_ADD = (req, res) => {
     teacher.push(newTeacher)
     write("users.json", teacher)
 
-    res.redirect("admin")
+    res.redirect("teacher")
 }
 
 module.exports = {

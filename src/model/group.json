@@ -26,11 +26,23 @@
     {
         "id": 5,
         "coursId": 3,
+        "teachId": 5,
+        "groups": "U3"
+    },
+    {
+        "id": 6,
+        "coursId": 1,
+        "teachId": 5,
+        "groups": "F2"
+    },
+    {
+        "id": 7,
+        "coursId": 4,
         "teachId": 7,
         "groups": "PSH1"
     },
     {
-        "id": 6,
+        "id": 8,
         "coursId": 3,
         "teachId": 7,
         "groups": "PSH2"

@@ -95,6 +95,7 @@ let elGroupsAddBtn = document.querySelector(".groups__addBtn")
 let elFormChangStudent = document.querySelector(".form__change-student")
 let elStudentAddBtn = document.querySelector(".student__addBtn")
 
+
 let elBodyBgTeacher = document.querySelector('.hidden__teacher');
 let elBodyBgGroups = document.querySelector('.hidden__groups');
 let elBodyBgCourses = document.querySelector('.hidden__courses');
@@ -116,7 +117,6 @@ elGroupsAddBtn.addEventListener("click", e => {
   elFormChangeGroups.classList.remove("d-none")
   elBodyBgGroups.setAttribute('class', 'overlay')
 })
-
 
 elBodyBgTeacher.addEventListener('click', function() {
   elFormChangeTeacher.classList.add("d-none")

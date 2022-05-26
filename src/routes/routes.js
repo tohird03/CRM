@@ -1,12 +1,15 @@
 const express = require("express")
 const router = express.Router()
 
+
 const LoginController = require("../controllers/LoginController")
 const AdminController = require("../controllers/AdminController")
 const TeacherControllers = require("../controllers/TeacherControllers")
 const StudentControllers = require("../controllers/StudentControllers")
 const GroupController = require("../controllers/GroupController")
 const CoursesController = require("../controllers/CoursesControllers")
+const HomeworkController = require("../controllers/HomeworkController")
+const UploadController = require("../controllers/UploadController")
 
 const verifyToken = require("../middlewares/verifyToken")
 const verifyRole = require("../middlewares/verifyRole")
@@ -25,5 +28,7 @@ router
     .post("/studentAdd", verifyToken, StudentControllers.STUDENT_ADD)
     .post("/groupsAdd", verifyToken, GroupController.GROUP_ADD)
     .post("/coursesAdd", verifyToken, CoursesController.COURSES_ADD)
+    .post("/homeworkAdd", verifyToken, HomeworkController.HOMEWORK_ADD)
+    .post("/upload", verifyToken, UploadController.UPLOAD_FILE)
 
 module.exports = router
