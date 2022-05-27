@@ -8,40 +8,110 @@
         "profilePhoto": ""
     },
     {
-        "id": 3,
-        "username": "Mashrab",
-        "password": "mashrabmashrab",
-        "phone": "9986696703",
-        "role": "teacher",
-        "course": "web",
-        "profilePhoto": ""
-    },
-    {
-        "id": 4,
-        "username": "Alimardon",
-        "password": "Alimardon",
-        "phone": "9986696608",
-        "role": "teacher",
-        "course": "photoshop",
-        "profilePhoto": ""
-    },
-    {
-        "id": 5,
-        "username": "Mashrab",
-        "password": "mashrabmashrab",
-        "phone": "9986696603",
-        "role": "teacher",
-        "course": "web",
-        "profilePhoto": ""
-    },
-    {
-        "id": 6,
-        "username": "Mashrab",
+        "id": 2,
+        "username": "Sheralijon",
         "password": "12121212",
         "phone": "9986696603",
         "role": "student",
         "course": "foundation",
         "group": "F1",
+        "profilePhoto": ""
+    },
+    {
+        "id": 3,
+        "username": "Mashrab",
+        "password": "yyyyyyyy",
+        "phone": "9986696703",
+        "role": "teacher",
+        "course": "foundation",
+        "profilePhoto": ""
+    },
+    {
+        "id": 4,
+        "username": "Tohir",
+        "password": "tohirtohir",
+        "phone": "9986696603",
+        "role": "teacher",
+        "course": "web",
+        "profilePhoto": ""
+    },
+    {
+        "id": 5,
+        "username": "Alimardon",
+        "password": "aaaabbbb",
+        "phone": "998669608",
+        "role": "teacher",
+        "course": "photoshop",
+        "profilePhoto": ""
+    },
+    {
+        "id": 6,
+        "username": "G'ani",
+        "password": "ganigani",
+        "phone": "998663433603",
+        "role": "student",
+        "course": "foundation",
+        "group": "F2",
+        "profilePhoto": ""
+    },
+    {
+        "id": 7,
+        "username": "Vali",
+        "password": "valivali",
+        "phone": "998439644443",
+        "role": "student",
+        "course": "foundation",
+        "group": "F1",
+        "profilePhoto": ""
+    },
+    {
+        "id": 9,
+        "username": "Go'zal",
+        "password": "gozalgozal",
+        "phone": "998906696604",
+        "role": "student",
+        "course": "foundation",
+        "group": "F1",
+        "profilePhoto": ""
+    },
+    {
+        "id": 8,
+        "username": "begi",
+        "password": "bbbbbbbb",
+        "phone": "998906696604",
+        "role": "student",
+        "course": "web",
+        "group": "W1",
+        "profilePhoto": ""
+    },
+    {
+        "id": 10,
+        "username": "Bekzod",
+        "password": "bekzodbekzod",
+        "phone": "998663433244",
+        "role": "student",
+        "course": "web",
+        "group": "W1",
+        "profilePhoto": ""
+    },
+    {
+        "id": 11,
+        "username": "Dili",
+        "password": "dilidili",
+        "phone": "998664322344",
+        "role": "student",
+        "course": "web",
+        "group": "W2",
+        "profilePhoto": ""
+    },
+    {
+        "id": 12,
+        "username": "diyor",
+        "password": "diyordiyor",
+        "phone": "435534555435",
+        "role": "student",
+        "course": "photoshop",
+        "group": "P1",
         "profilePhoto": ""
     }
 ]

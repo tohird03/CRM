@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "grade": "5",
+        "studentId": "7",
+        "homeworkId": "12"
+    },
+    {
+        "grade": "4",
+        "studentId": "7",
+        "homeworkId": "15"
+    },
+    {
+        "grade": "4",
+        "studentId": "2",
+        "homeworkId": "13"
+    }
+]

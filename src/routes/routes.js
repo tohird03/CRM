@@ -32,5 +32,6 @@ router
     .post("/homeworkAdd", verifyToken, HomeworkController.HOMEWORK_ADD)
     .post("/upload", verifyToken, UploadController.UPLOAD_FILE)
     .post("/rating", verifyToken, RatingController.RATING_STUDENT)
+    .post("/groupsTeacherAdd", verifyToken, AdminController.UPDATE_GROUPS)
 
 module.exports = router

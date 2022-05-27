@@ -8,6 +8,7 @@ ellAppContent.addEventListener("click", e => {
         elGroupsIdAdd.value = e.target.id
         elFormAddHomework.classList.remove("d-none")
         elBodyBgHomework.setAttribute('class', 'overlay')
+        console.log(e.target.id);
     }
 })
 

@@ -1,1 +1,107 @@
-[]
+[
+    {
+        "id": 15,
+        "groupId": 1,
+        "title": "Node js",
+        "desc": "Server ko'tarish                                                   ",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 14,
+        "groupId": 1,
+        "title": "Express",
+        "desc": "Hammangiz qiling                                                  ",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 13,
+        "groupId": 1,
+        "title": "Bootstrap",
+        "desc": " xohlagan vazifa qailish                                                   ",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 12,
+        "groupId": 1,
+        "title": "Javascriptni ko'rib kenglar",
+        "desc": "Shart F1                                    ",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 11,
+        "groupId": 2,
+        "title": "Scssni o'qib keling",
+        "desc": "Bajaringlar                                             ",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 10,
+        "groupId": 2,
+        "title": "Bootstrap",
+        "desc": "           Shartli qilinglar F2 guruh                                         ",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 9,
+        "groupId": 2,
+        "title": "Css",
+        "desc": "  Bajaringlar                                                  ",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 8,
+        "groupId": 2,
+        "title": "Html qilinglar",
+        "desc": "Bajaringlar                                          ",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 7,
+        "groupId": 3,
+        "title": "asd",
+        "desc": "                                                ",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 6,
+        "groupId": 5,
+        "title": "postgresql",
+        "desc": "Bajarish shart",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 5,
+        "groupId": 5,
+        "title": "Mongodb",
+        "desc": "W2 hamma uyga vazifani qilsin",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 4,
+        "groupId": 5,
+        "title": "Express",
+        "desc": "w2 Hamma express bilan tanishib kelsin",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 3,
+        "groupId": 3,
+        "title": "Node js",
+        "desc": "Hamma tanishib kelsin",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 2,
+        "groupId": 3,
+        "title": "Socket IO",
+        "desc": "",
+        "date": "27-05-2022"
+    },
+    {
+        "id": 1,
+        "groupId": 3,
+        "title": "Telegram bot",
+        "desc": "Hamma uyga vazifani bajarsin W1 guruh",
+        "date": "27-05-2022"
+    }
+]

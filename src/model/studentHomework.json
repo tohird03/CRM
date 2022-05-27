@@ -1,1 +1,47 @@
-[]
+[
+    {
+        "id": 5,
+        "studentId": "7",
+        "homeworkId": "14",
+        "homeFile": "http://localhost:9000/assets/2.jpg",
+        "title": "Express ham buldi",
+        "date": "27-05-2022",
+        "size": "0.209mb"
+    },
+    {
+        "id": 4,
+        "studentId": "7",
+        "homeworkId": "12",
+        "homeFile": "http://localhost:9000/assets/5.jpg",
+        "title": "Javascripti vazifasini tugatdim",
+        "date": "27-05-2022",
+        "size": "0.18mb"
+    },
+    {
+        "id": 3,
+        "studentId": "7",
+        "homeworkId": "15",
+        "homeFile": "http://localhost:9000/assets/10.jpg",
+        "title": "Nodejs ni tugatdim",
+        "date": "27-05-2022",
+        "size": "0.204mb"
+    },
+    {
+        "id": 2,
+        "studentId": "2",
+        "homeworkId": "12",
+        "homeFile": "http://localhost:9000/assets/10.jpg",
+        "title": "Bajarib bo'ldim",
+        "date": "27-05-2022",
+        "size": "0.204mb"
+    },
+    {
+        "id": 1,
+        "studentId": "2",
+        "homeworkId": "13",
+        "homeFile": "http://localhost:9000/assets/3.jpg",
+        "title": "Bajardim",
+        "date": "27-05-2022",
+        "size": "0.17mb"
+    }
+]

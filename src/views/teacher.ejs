@@ -38,80 +38,80 @@
                             <div class="product-cell stock t-center">Homework</div>
                         </div>
 
-                        <% foundCours?.map(group=> { %>
-                            <div class="products-row">
-                                <div class="product-cell image">
+                        <% if(foundCours){ %>
+                            <% foundCours?.map(group=> { %>
+                                <div class="products-row">
+                                    <div class="product-cell image">
+                                        <span>
+                                            <%= group?.groups.slice(0, 1)?.toUpperCase() + group?.groups?.slice(1) %>
+                                        </span>
+                                    </div>
+                                    <div class="product-cell image">
 
-                                    <span>
-                                        <%= group?.groups.slice(0, 1)?.toUpperCase() + group?.groups?.slice(1) %>
-                                    </span>
-                                </div>
-                                <div class="product-cell image">
+                                        <span>
+                                            <%= group?.course?.title?.slice(0, 1)?.toUpperCase() +
+                                                group?.course?.title?.slice(1) %>
+                                        </span>
+                                    </div>
+                                    <div class="product-cell category"><span class="cell-label">Category:</span>
+                                        <% if(group?.teacher){ %>
+                                            <%= group?.teacher?.username?.slice(0, 1)?.toUpperCase() +
+                                                group?.teacher?.username?.slice(1) %>
+                                                <% }else{ %>
+                                                    <span class="not_teacher">O'qituvchisi yo'q</span>
+                                                    <% } %>
 
-                                    <span>
-                                        <%= group?.course?.title?.slice(0, 1)?.toUpperCase() +
-                                            group?.course?.title?.slice(1) %>
-                                    </span>
-                                </div>
-                                <div class="product-cell category"><span class="cell-label">Category:</span>
-                                    <% if(group?.teacher){ %>
-                                        <%= group?.teacher?.username?.slice(0, 1)?.toUpperCase() +
-                                            group?.teacher?.username?.slice(1) %>
-                                            <% }else{ %>
-                                                <span class="not_teacher">O'qituvchisi yo'q</span>
-                                                <% } %>
+                                    </div>
+                                    <div class="product-cell status-cell">
+                                        <span class="cell-label">Status:</span>
+                                        <span class="status active">Active</span>
+                                    </div>
+                                    <div class="product-cell stock"><span class="cell-label">Stock:</span>
+                                        +<%= group?.teacher?.phone %>
+                                    </div>
+                                    <div class="product-cell stock"><span class="cell-label">Stock:</span>
+                                        <button id=<%=group?.id %> class="homework">
+                                            Homework
+                                        </button>
 
-                                </div>
-                                <div class="product-cell status-cell">
-                                    <span class="cell-label">Status:</span>
-                                    <span class="status active">Active</span>
-                                </div>
-                                <div class="product-cell stock"><span class="cell-label">Stock:</span>
-                                    +<%= group?.teacher?.phone %>
-                                </div>
-                                <div class="product-cell stock"><span class="cell-label">Stock:</span>
-                                    <button id=<%=group?.id %> class="homework">
-                                        Homework
-                                    </button>
+                                        <!-- ADD HOMEWORK MODAL FORM -->
+                                        <div class="hidden__bg hidden__homework body__close bg_modal"></div>
 
-                                    <!-- ADD HOMEWORK MODAL FORM -->
-                                    <div class="hidden__bg hidden__homework body__close"></div>
+                                        <div class="form__change-homework add__hometaskTeacher form__change p-5 d-none bg-warning">
+                                            <form action="/homeworkAdd" method="post">
+                                                <div class="mb-3">
+                                                    <label for="title" class="form-label">Homework title</label>
 
-                                    <div class="form__change-homework form__change p-5 d-none bg-warning">
-                                        <form action="/homeworkAdd" method="post">
-                                            <div class="mb-3">
-                                                <label for="title" class="form-label">Pharmacy title</label>
+                                                    <input name="title" type="text" class="form-control" id="title"
+                                                        placeholder="Homework title" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="desc" class="form-label">Homework about</label>
 
-                                                <input name="title" type="text" class="form-control" id="title"
-                                                    placeholder="Homework title">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="title" class="form-label">Pharmacy title</label>
+                                                    <textarea class="homework__add" name="desc" placeholder="Homework about" required id="desc">
+                                                    </textarea>
+                                                </div>
 
-                                                <textarea class="homework__add" name="desc"
-                                                    placeholder="Homework about"></textarea>
-                                            </div>
+                                                <div class="mb-3">
+                                                    <input type="text" name="groupId" class="visually-hidden homeworkId">
+                                                </div>
 
-                                            <div class="mb-3">
-                                                <input type="text" name="groupId" class="visually-hidden homeworkId">
-                                            </div>
-
-                                            <button id=<%=group?.id %> style="display: flex; justify-content:flex-end;"
-                                                class="btn btn-success homework__btn courses__add" type="submit">
-                                                Add
-                                            </button>
-                                        </form>
+                                                <button id=<%=group?.id %> class="btn btn-success homework__btn courses__add" type="submit">
+                                                    Add
+                                                </button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        <% }) %>
+                            <% }) %>
+                        <% } %>
                     </div>
                 </div>
             </div>
 
             <!-- STUDENT HOMEWORKS -->
             <div class="student__home app-main d-none">
-                <div>
+                <div class="student__homeCard">
                     <% isNanTeachHomeTask?.map(group=> { %>
                         <div class="card">
                             <div class="card-body">

@@ -199,7 +199,7 @@
                         <div class="mb-3">
                             <label for="phone" class="form-label">Student Phone</label>
 
-                            <input name="phone" type="tel" class="form-control" id="phone" minlength="12" placeholder="Start 998">
+                            <input name="phone" type="tel" class="form-control" id="phone" minlength="12" maxlength="12" placeholder="Start 998" required>
                         </div>
                         <div class="mb-3">
                             <label for="course" class="form-label">Course Category</label>
@@ -255,10 +255,9 @@
                             <div class="product-cell stock t-center">Remove</div>
                         </div>
 
-                        <% foundGroups?.map(group=> { %>
+                        <% filterGroup?.map(group=> { %>
                             <div class="products-row">
                                 <div class="product-cell image">
-
                                     <span><%= group?.groups.slice(0, 1)?.toUpperCase() + group?.groups?.slice(1) %></span>
                                 </div>
                                 <div class="product-cell category"><span class="cell-label">Category:</span>
@@ -277,22 +276,26 @@
                                                 <input name="groupsId" type="text" class="groupsIdAdd" id="title" required placeholder="Group Title">
                                             </div>
 
-                                            <div class="mb-3">
-                                                <label for="teacher" class="form-label">Teacher Name</label>
+                                            <% if(foundTeachers?.length > 0){ %>
+                                                <div class="mb-3">
+                                                    <label for="teacher" class="form-label">Teacher Name</label>
 
-                                                <select name="teacher" id="teacher" required>
-                                                    <% foundTeachers?.map(teacher => { %>
-                                                        <option value=<%= teacher?.id %> >
-                                                            <%= teacher?.username?.slice(0, 1)?.toUpperCase() + teacher?.username?.slice(1) %>
-                                                        </option>
-                                                    <% }) %>
-                                                </select>
-                                            </div>
+                                                    <select name="teacher" id="teacher" required>
+                                                        <% foundTeachers?.map(teacher => { %>
+                                                            <option value=<%= teacher?.id %> >
+                                                                <%= teacher?.username?.slice(0, 1)?.toUpperCase() + teacher?.username?.slice(1) %>
+                                                            </option>
+                                                        <% }) %>
+                                                    </select>
+                                                </div>
 
                                             <button class="btn btn-success courses__add"
                                                 type="submit">
                                                 Add
                                             </button>
+                                            <% }else{ %>
+                                                <h1 class="green">O'qituvchi topilmadi Yangi o'qituvchi qo'shing!!!</h1>
+                                            <% } %>
                                         </form>
                                     </div>
 

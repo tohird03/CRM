@@ -196,7 +196,6 @@
 .homework__add {
   resize: none;
   height: 200px;
-  width: 400px;
 }
 
 .isNotHomewroks {
@@ -275,7 +274,7 @@
   background-color: #a30e0e;
   width: 250px;
   min-height: 260px;
-  padding: 5px;
+  padding: 10px;
   margin: 10px;
   border-radius: 12px;
   box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
@@ -490,4 +489,66 @@
   align-items: center;
   justify-content: center;
   margin-left: auto;
+}
+
+.remove {
+  padding: 6px 12px;
+  border: none;
+  background-color: rgb(172, 0, 0);
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.homework {
+  padding: 6px 12px;
+  border: none;
+  background-color: rgb(250, 204, 0);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.add__hometaskTeacher {
+  padding: 30px;
+}
+.add__hometaskTeacher form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.add__hometaskTeacher form div label {
+  color: #000000;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.add__hometaskTeacher form div input, textarea {
+  padding: 8px;
+  outline: none;
+  border: 1px solid black;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.add__hometaskTeacher form button {
+  padding: 8px;
+  outline: none;
+  font-size: 17px;
+  border-radius: 5px;
+  background-color: green;
+  border: none;
+  width: 100px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.student__homeCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }

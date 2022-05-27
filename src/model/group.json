@@ -2,13 +2,31 @@
     {
         "id": 1,
         "coursId": 1,
-        "teachId": 2,
+        "teachId": "5",
         "groups": "F1"
     },
     {
         "id": 2,
         "coursId": 1,
-        "teachId": 3,
+        "teachId": "3",
         "groups": "F2"
+    },
+    {
+        "id": 3,
+        "coursId": 2,
+        "teachId": "4",
+        "groups": "W1"
+    },
+    {
+        "id": 4,
+        "coursId": 4,
+        "teachId": 0,
+        "groups": "P1"
+    },
+    {
+        "id": 5,
+        "coursId": 2,
+        "teachId": "4",
+        "groups": "W2"
     }
 ]

@@ -1,7 +1,7 @@
 let appContent = document.querySelector(".app-content")
-let elFormAddHomework = document.querySelector(".form__change-homework")
+let elFormAddHomework = document.querySelector(".add__hometaskTeacher")
 let elHomeworkAddBtn = document.querySelector(".homework")
-let elBodyBgHomework = document.querySelector('.hidden__homework');
+let elBodyBgHomework = document.querySelector('.bg_modal');
 let elInputHomeworkId = document.querySelector('.homeworkId');
 const elSideBarList = document.querySelector(".nav-list")
 
@@ -13,10 +13,14 @@ appContent.addEventListener("click", e => {
     }
 })
 
-elBodyBgHomework.addEventListener('click', function() {
-  elFormAddHomework.classList.add("d-none")
-  elBodyBgHomework.setAttribute("class", "hidden__bg")
-})
+if(elBodyBgHomework){
+  elBodyBgHomework.addEventListener('click', function() {
+    elFormAddHomework.classList.add("d-none")
+    elBodyBgHomework.setAttribute("class", "hidden__bg")
+  })
+}
+
+
 
 // PAGE RELOAD
 
@@ -41,4 +45,3 @@ elSideBarList.addEventListener("click", e => {
     elLinkGroups.classList.remove("active")
   }
 })
-
