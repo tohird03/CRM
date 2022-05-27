@@ -71,7 +71,7 @@
                 </div>
             </div>
 
-            <!-- STUDENT -->
+            <!-- STUDENT HOMEWORK -->
             <div class="app-main homework_student d-none">
                 <div class="main-header-line">
                     <div class="app-content-header">
@@ -109,124 +109,182 @@
                                         <div class="mb-3">
                                             <label for="title" class="form-label">Pharmacy title</label>
 
-                                            <input name="title" type="text" class="form-control" id="title" placeholder="Homework title" required>
+                                            <input name="title" type="text" class="form-control" id="title"
+                                                placeholder="Homework title" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="title" class="form-label">Pharmacy title</label>
 
-                                            <input name="homeFile" type="file" class="form-control" id="title" placeholder="Homework file" required>
+                                            <input name="homeFile" type="file" class="form-control" id="title"
+                                                placeholder="Homework file" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="title" class="form-label">Pharmacy title</label>
 
-                                            <textarea class="homework__add" name="desc" placeholder="Homework about" required></textarea>
+                                            <textarea class="homework__add" name="desc" placeholder="Homework about"
+                                                required></textarea>
                                         </div>
 
                                         <div class="mb-3">
                                             <input type="text" name="groupId" class="visually-hidden homeworkId">
                                         </div>
 
-                                        <button id=<%= e?.id %>  style="display: flex; justify-content:flex-end;"
+                                        <button id=<%=e?.id %> style="display: flex; justify-content:flex-end;"
                                             class="btn btn-success homework__btn courses__add" type="submit">
                                             Add
                                         </button>
                                     </form>
                                 </div>
                             </div>
-                        <% }) %>
-                    <% } %>
-
-                    <!-- Table content -->
-                    <h4 class="green">Bajarilgan vazifalar</h4>
-                    <div class="app-content">
-                        <div class="products-area-wrapper tableView homework__done">
-                            <div class="products-header">
-                                <div class="product-cell image t-center">Homework Title</div>
-                                <div class="product-cell image t-center">Download</div>
-                                <div class="product-cell category t-center">Send date</div>
-                                <div class="product-cell stock t-center">Status</div>
-                                <div class="product-cell stock t-center">Done</div>
-                            </div>
-
-                            <% studentHome?.map(homework=> { %>
-                                <div class="products-row">
-                                    <div class="product-cell image">
-                                        <span>
-                                            <%= homework?.title?.slice(0, 1)?.toUpperCase() + homework?.title?.slice(1) %>
-                                        </span>
-                                    </div>
-                                    <div class="product-cell image">
-                                        <a href=<%= homework?.homeFile %>  class="material-symbols-outlined download_student-homework"  download>
-                                            file_download
-                                        </a>
-                                    </div>
-                                    <div class="product-cell image">
-                                        <span>
-                                            <%= homework.date %>
-
-                                        </span>
-                                    </div>
-
-                                    <div class="product-cell status-cell">
-                                        <span class="cell-label">Status:</span>
-                                        <span class="status active">Active</span>
-                                    </div>
-
-                                    <div class="product-cell stock"><span class="cell-label">Stock:</span>
-                                        <span class="material-symbols-outlined green">
-                                            check_circle
-                                        </span>
-                                    </div>
-                                </div>
                             <% }) %>
-                        </div>
-                    </div>
+                                <% } %>
 
-                    <h4 class="green">Jami vazifalar</h4>
-                    <div class="app-content">
-                        <div class="products-area-wrapper tableView homework__done">
-                            <div class="products-header">
-                                <div class="product-cell image t-center">Homework Title</div>
-                                <div class="product-cell category t-center">Send date</div>
-                                <div class="product-cell stock t-center">Status</div>
-                                <div class="product-cell stock t-center">Done</div>
-                            </div>
+                                    <!-- Table content -->
+                                    <h4 class="green">Bajarilgan vazifalar</h4>
+                                    <div class="app-content">
+                                        <div class="products-area-wrapper tableView homework__done">
+                                            <div class="products-header">
+                                                <div class="product-cell image t-center">Homework Title</div>
+                                                <div class="product-cell image t-center">Download</div>
+                                                <div class="product-cell category t-center">Send date</div>
+                                                <div class="product-cell stock t-center">Status</div>
+                                                <div class="product-cell stock t-center">Done</div>
+                                            </div>
 
-                            <% allHomeworkTrue?.map(homework=> { %>
-                                <div class="products-row">
-                                    <div class="product-cell image">
-                                        <span>
-                                            <%= homework?.title?.slice(0, 1)?.toUpperCase() + homework?.title?.slice(1) %>
-                                        </span>
-                                    </div>
-                                    <div class="product-cell image">
-                                        <span>
-                                            <%= homework.date %>
-                                        </span>
+                                            <% studentHome?.map(homework=> { %>
+                                                <div class="products-row">
+                                                    <div class="product-cell image">
+                                                        <span>
+                                                            <%= homework?.title?.slice(0, 1)?.toUpperCase() +
+                                                                homework?.title?.slice(1) %>
+                                                        </span>
+                                                    </div>
+                                                    <div class="product-cell image">
+                                                        <a href=<%=homework?.homeFile %>
+                                                            class="material-symbols-outlined download_student-homework"
+                                                            download>
+                                                            file_download
+                                                        </a>
+                                                    </div>
+                                                    <div class="product-cell image">
+                                                        <span>
+                                                            <%= homework.date %>
+                                                        </span>
+                                                    </div>
+
+                                                    <div class="product-cell status-cell">
+                                                        <span class="cell-label">Status:</span>
+                                                        <span class="status active">Active</span>
+                                                    </div>
+
+                                                    <div class="product-cell stock"><span
+                                                            class="cell-label">Stock:</span>
+                                                        <span class="material-symbols-outlined green">
+                                                            check_circle
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <% }) %>
+                                        </div>
                                     </div>
 
-                                    <div class="product-cell status-cell">
-                                        <span class="cell-label">Status:</span>
-                                        <% if(homework.send == "true"){ %>
-                                            <span class="status active">Sent</span>
-                                        <% } else { %>
-                                            <span class="status active inactive">Not sent</span>
-                                        <% } %>
+                                    <h4 class="green">Jami vazifalar</h4>
+                                    <div class="app-content">
+                                        <div class="products-area-wrapper tableView homework__done">
+                                            <div class="products-header">
+                                                <div class="product-cell image t-center">Homework Title</div>
+                                                <div class="product-cell category t-center">Send date</div>
+                                                <div class="product-cell stock t-center">Status</div>
+                                                <div class="product-cell stock t-center">Done</div>
+                                            </div>
+
+                                            <% allHomeworkTrue?.map(homework=> { %>
+                                                <div class="products-row">
+                                                    <div class="product-cell image">
+                                                        <span>
+                                                            <%= homework?.title?.slice(0, 1)?.toUpperCase() +
+                                                                homework?.title?.slice(1) %>
+                                                        </span>
+                                                    </div>
+                                                    <div class="product-cell image">
+                                                        <span>
+                                                            <%= homework.date %>
+                                                        </span>
+                                                    </div>
+
+                                                    <div class="product-cell status-cell">
+                                                        <span class="cell-label">Status:</span>
+                                                        <% if(homework.send=="true" ){ %>
+                                                            <span class="status active">Sent</span>
+                                                            <% } else { %>
+                                                                <span class="status active inactive">Not sent</span>
+                                                                <% } %>
+                                                    </div>
+
+                                                    <div class="product-cell stock"><span
+                                                            class="cell-label">Stock:</span>
+                                                        <% if(homework.send=="true" ){ %>
+                                                            <span class="material-symbols-outlined green">
+                                                                check_circle
+                                                            </span>
+                                                            <% } else { %>
+                                                                <span class="material-symbols-outlined error_icon">
+                                                                    error
+                                                                </span>
+                                                                <% } %>
+                                                    </div>
+                                                </div>
+                                                <% }) %>
+                                        </div>
+                                    </div>
+                                    <h4 class="green">Baholaringiz</h4>
+                                    <div class="app-content">
+                                        <div class="products-area-wrapper tableView homework__done">
+                                    <div class="products-header">
+                                        <div class="product-cell image t-center">Your Homework</div>
+                                        <div class="product-cell category t-center">Send date</div>
+                                        <div class="product-cell stock t-center">Download</div>
+                                        <div class="product-cell stock t-center">Size</div>
+                                        <div class="product-cell stock t-center">Grade</div>
                                     </div>
 
-                                    <div class="product-cell stock"><span class="cell-label">Stock:</span>
-                                        <% if(homework.send == "true"){ %>
-                                            <span class="material-symbols-outlined green">
-                                                check_circle
-                                            </span>
-                                        <% } else { %>
-                                            <span class="material-symbols-outlined error_icon">
-                                                error
-                                            </span>
-                                        <% } %>
-                                    </div>
-                                </div>
-                            <% }) %>
+                                    <% foundStudentGrade?.map(homework=> { %>
+                                        <div class="products-row">
+                                            <div class="product-cell image">
+                                                <span>
+                                                    <%= homework?.title?.slice(0, 1)?.toUpperCase() +
+                                                        homework?.title?.slice(1) %>
+                                                </span>
+                                            </div>
+                                            <div class="product-cell image">
+                                                <span>
+                                                    <%= homework.date %>
+                                                </span>
+                                            </div>
+
+                                            <div class="product-cell status-cell">
+                                                <span class="cell-label">Status:</span>
+                                                <a href=<%=homework?.homeFile %>
+                                                    class="material-symbols-outlined download_student-homework"
+                                                    download>
+                                                    file_download
+                                                </a>
+                                            </div>
+
+                                            <div class="product-cell stock">
+                                                <span class="cell-label">Status</span>
+                                                <span class="status active">
+                                                    <%= homework?.size %>
+                                                </span>
+                                            </div>
+                                            <div class="product-cell stock">
+                                                <span class="cell-label">Status</span>
+                                                <span class="status grade">
+                                                    <%= homework?.grade.grade %>
+                                                </span>
+                                            </div>
+                                        </div>
+                                <% }) %>
                         </div>
                     </div>
                 </div>

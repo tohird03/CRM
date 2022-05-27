@@ -27,7 +27,6 @@
                     <%= pageLink.linkName %>
 
                         <% if(pageLink?.linkName=="Homework" ){ %>
-                            <% console.log(studentHomeTaskIsNot); %>
 
                                 <div class="isNotHomewroks">
                                     <% if(studentHomeTaskIsNot.length> 0){ %>
@@ -44,7 +43,25 @@
                                             </span>
                                             <% } %>
                                 </div>
-                                <% } %>
+                        <% } %>
+                        <% if(pageLink?.linkName=="Homeworks" ){ %>
+
+                                <div class="isNotHomewroks">
+                                    <% if(isNanTeachHomeTask.length> 0){ %>
+                                        <span id=<%=pageLink.linkName %> class="material-symbols-outlined error_icon">
+                                            error
+                                        </span>
+
+                                        <span id=<%=pageLink.linkName %> class="isNothome">
+                                            <%= isNanTeachHomeTask.length %>
+                                        </span>
+                                        <% } else if(isNanTeachHomeTask.length==0) { %>
+                                            <span class="material-symbols-outlined green">
+                                                check_circle
+                                            </span>
+                                            <% } %>
+                                </div>
+                        <% } %>
                 </button>
             </li>
             <% }) %>

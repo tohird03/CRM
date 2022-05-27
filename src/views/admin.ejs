@@ -15,12 +15,15 @@
 
 <body>
     <div class="app-container">
+        <!-- LEFT NAVBAR -->
         <%- include("./partials/sidebar.ejs", { navlink: [ {iconName: "person" , linkName: "Teachers" ,
             isActive: "active" }, {iconName: "school" , linkName: "Student" , isActive: "" }, {iconName: "group" ,
             linkName: "Groups" , isActive: "" }, {iconName: "library_books" , linkName: "Courses" , isActive: "" } ]})%>
 
             <!-- TEACHERS CONTENT -->
             <div class="app-main add_teachers">
+
+                <!-- HEADER -->
                 <div class="main-header-line">
                     <div class="app-content-header">
                         <h1 class="app-content-headerText ">TEACHERS</h1>
@@ -31,6 +34,7 @@
                     </div>
                 </div>
 
+                <!-- CONTENT -->
                 <div class="app-content">
                     <div class="products-area-wrapper tableView">
                         <div class="products-header">
@@ -72,27 +76,36 @@
                     </div>
                 </div>
 
+                <!-- ADD -->
                 <div class="hidden__bg hidden__teacher body__close"></div>
                 <div class="form__change-teacher form__change p-5 d-none bg-warning">
-                    <form action="/teachersAdd" method="post">
+                    <form class="add_student-form" action="/teachersAdd" method="post">
                         <div class="mb-3">
-                            <label for="title" class="form-label">Pharmacy title</label>
+                            <label for="username" class="form-label">
+                                Teacher Username
+                            </label>
 
-                            <input name="username" type="text" class="form-control" id="title">
+                            <input name="username" type="text" class="form-control" id="username" required placeholder="Teacher Username">
                         </div>
                         <div class="mb-3">
-                            <label for="address" class="form-label">Pharmacy address</label>
+                            <label for="password" class="form-label">
+                                Teacher Password
+                            </label>
 
-                            <input name="password" type="text" class="form-control" id="price" required minlength="8">
+                            <input name="password" type="text" class="form-control" id="password" required minlength="8"  aria-required="true" placeholder="Teacher Password">
                         </div>
                         <div class="mb-3">
-                            <label for="phone" class="form-label">Img link</label>
+                            <label for="phone" class="form-label">
+                                Teacher Phone
+                            </label>
 
-                            <input value="998" name="phone" type="number" class="form-control" id="phone">
+                            <input value="998" name="phone" type="number" class="form-control" id="phone" minlength="12" required placeholder="Teacher Phone">
                         </div>
 
                         <div class="mb-3">
-                            <label for="course" class="form-label">Img link</label>
+                            <label for="course" class="form-label">
+                                Course Category
+                            </label>
 
                             <select name="course" id="">
                                 <% allCourses?.map(course => { %>
@@ -103,14 +116,17 @@
                             </select>
                         </div>
 
-                        <button style="display: flex; justify-content:flex-end;" class="btn btn-success courses__add"
-                            type="submit">Add</button>
+                        <button class="btn btn-success courses__add"
+                            type="submit">
+                            Add
+                        </button>
                     </form>
                 </div>
             </div>
 
             <!-- ADD STUDENT -->
             <div class="app-main add_student d-none">
+                <!-- HEADER -->
                 <div class="main-header-line">
                     <div class="app-content-header">
                         <h1 class="app-content-headerText ">STUDENT</h1>
@@ -121,6 +137,7 @@
                     </div>
                 </div>
 
+                <!-- CONTENT -->
                 <div class="app-content">
                     <div class="products-area-wrapper tableView">
                         <div class="products-header">
@@ -168,27 +185,26 @@
                 <!-- ADD STUDENT MODAL FORM -->
                 <div class="hidden__bg hidden__student body__close"></div>
                 <div class="form__change-student form__change p-5 d-none bg-warning">
-                    <form action="/studentAdd" method="post">
+                    <form class="add_student-form" action="/studentAdd" method="post">
                         <div class="mb-3">
-                            <label for="title" class="form-label">Pharmacy title</label>
+                            <label for="username" class="form-label">Student Username</label>
 
-                            <input name="username" type="text" class="form-control" id="title">
+                            <input name="username" type="text" class="form-control" id="username" required placeholder="Student Username">
                         </div>
                         <div class="mb-3">
-                            <label for="address" class="form-label">Pharmacy address</label>
+                            <label for="password" class="form-label">Student Password</label>
 
-                            <input name="password" type="text" class="form-control" id="price" required minlength="8">
+                            <input name="password" type="text" class="form-control" id="password" required minlength="8" placeholder="Student Password">
                         </div>
                         <div class="mb-3">
-                            <label for="phone" class="form-label">Img link</label>
+                            <label for="phone" class="form-label">Student Phone</label>
 
-                            <input name="phone" value="998" type="number" class="form-control" id="phone" minlength="12">
+                            <input name="phone" type="tel" class="form-control" id="phone" minlength="12" placeholder="Start 998">
                         </div>
-
                         <div class="mb-3">
-                            <label for="course" class="form-label">Img link</label>
+                            <label for="course" class="form-label">Course Category</label>
 
-                            <select name="course" id="">
+                            <select name="course" id="" required>
                                 <% allCourses?.map(course => { %>
                                     <option value=<%= course?.title %> >
                                         <%= course?.title?.slice(0, 1)?.toUpperCase() + course?.title?.slice(1) %>
@@ -196,11 +212,10 @@
                                 <% }) %>
                             </select>
                         </div>
-
                         <div class="mb-3">
-                            <label for="course" class="form-label">Img link</label>
+                            <label for="course" class="form-label">Group Category</label>
 
-                            <select name="group" id="">
+                            <select name="group" id="" required>
                                 <% allGroups?.map(group => { %>
                                     <option value=<%= group?.groups %> >
                                         <%= group?.groups?.slice(0, 1)?.toUpperCase() + group?.groups?.slice(1) %>
@@ -208,15 +223,17 @@
                                 <% }) %>
                             </select>
                         </div>
-
-                        <button style="display: flex; justify-content:flex-end;" class="btn btn-success courses__add"
-                            type="submit">Add</button>
+                        <button class="btn btn-success courses__add"
+                            type="submit">
+                            Add
+                        </button>
                     </form>
                 </div>
             </div>
 
             <!-- ADD GROUP -->
             <div class="app-main add_groups d-none">
+                <!-- HEADER -->
                 <div class="main-header-line">
                     <div class="app-content-header">
                         <h1 class="app-content-headerText ">GROUPS</h1>
@@ -227,8 +244,8 @@
                     </div>
                 </div>
 
-                <!-- Table content -->
-                <div class="app-content">
+                <!-- CONTENT -->
+                <div class="app-content app__graoupContent">
                     <div class="products-area-wrapper tableView">
                         <div class="products-header">
                             <div class="product-cell image t-center">Group Title</div>
@@ -248,13 +265,46 @@
                                     <% if(group?.teacher){ %>
                                         <%= group?.teacher?.username?.slice(0, 1)?.toUpperCase() + group?.teacher?.username?.slice(1) %>
                                     <% }else{ %>
-                                        <span class="not_teacher">O'qituvchisi yo'q</span>
+                                        <span id=<%= group?.id %>  class="not_teacher">O'qituvchi biriktirish</span>
                                     <% } %>
+
+                                    <div class="hidden__bg hidden_notTeacher body__close"></div>
+                                    <div class="form__change-teacherAdd form__change p-5 d-none bg-warning">
+                                        <form class="add_student-form" action="/groupsTeacherAdd" method="post">
+                                            <div class="visually-hidden">
+                                                <label for="title" class="form-label">Group Title</label>
+
+                                                <input name="groupsId" type="text" class="groupsIdAdd" id="title" required placeholder="Group Title">
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="teacher" class="form-label">Teacher Name</label>
+
+                                                <select name="teacher" id="teacher" required>
+                                                    <% foundTeachers?.map(teacher => { %>
+                                                        <option value=<%= teacher?.id %> >
+                                                            <%= teacher?.username?.slice(0, 1)?.toUpperCase() + teacher?.username?.slice(1) %>
+                                                        </option>
+                                                    <% }) %>
+                                                </select>
+                                            </div>
+
+                                            <button class="btn btn-success courses__add"
+                                                type="submit">
+                                                Add
+                                            </button>
+                                        </form>
+                                    </div>
 
                                 </div>
                                 <div class="product-cell status-cell">
                                     <span class="cell-label">Status:</span>
-                                    <span class="status active">Active</span>
+                                    <% if(group?.teacher){ %>
+                                        <span class="status active">Active</span>
+                                    <% }else{ %>
+                                        <span class="status inactive">Not active</span>
+                                    <% } %>
+
                                 </div>
                                 <div class="product-cell stock"><span class="cell-label">Stock:</span>
                                     +<%= group?.teacher?.phone %>
@@ -270,17 +320,19 @@
                 <!-- ADD GROUP MODAL FORM -->
                 <div class="hidden__bg hidden__groups body__close"></div>
                 <div class="form__change-groups form__change p-5 d-none bg-warning">
-                    <form action="/groupsAdd" method="post">
+                    <form class="add_student-form" action="/groupsAdd" method="post">
                         <div class="mb-3">
-                            <label for="title" class="form-label">Pharmacy title</label>
+                            <label for="title" class="form-label">Group Title</label>
 
-                            <input name="groups" type="text" class="form-control" id="title">
+                            <input name="groups" type="text" class="form-control" id="title" required placeholder="Group Title">
                         </div>
 
                         <div class="mb-3">
-                            <label for="course" class="form-label">Img link</label>
+                            <label for="course" class="form-label">
+                                Courses Category
+                            </label>
 
-                            <select name="course" id="">
+                            <select name="course" id="" required>
                                 <% allCourses?.map(course => { %>
                                     <option value=<%= course?.id %> >
                                         <%= course?.title?.slice(0, 1)?.toUpperCase() + course?.title?.slice(1) %>
@@ -290,9 +342,9 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="course" class="form-label">Img link</label>
+                            <label for="teacher" class="form-label">Teacher Name</label>
 
-                            <select name="teacher" id="">
+                            <select name="teacher" id="teacher" required>
                                 <% foundTeachers?.map(teacher => { %>
                                     <option value=<%= teacher?.id %> >
                                         <%= teacher?.username?.slice(0, 1)?.toUpperCase() + teacher?.username?.slice(1) %>
@@ -301,14 +353,18 @@
                             </select>
                         </div>
 
-                        <button style="display: flex; justify-content:flex-end;" class="btn btn-success courses__add"
-                            type="submit">Add</button>
+                        <button class="btn btn-success courses__add"
+                            type="submit">
+                            Add
+                        </button>
                     </form>
                 </div>
             </div>
 
             <!-- ADD COURSES -->
             <div class="app-main add_courses d-none">
+
+                <!-- HEADER -->
                 <div class="main-header-line">
                     <div class="app-content-header">
                         <h1 class="app-content-headerText ">COURSES</h1>
@@ -319,6 +375,7 @@
                     </div>
                 </div>
 
+                <!-- CONTENT -->
                 <div class="app-content">
                     <div class="products-area-wrapper tableView">
                         <div class="products-header">
@@ -352,29 +409,32 @@
                 <!-- ADD COURSE MODAL FORM -->
                 <div class="hidden__bg hidden__courses body__close"></div>
                 <div class="form__change-courses form__change p-5 d-none bg-warning">
-                    <form action="/coursesAdd" method="post">
+                    <form class="add_student-form" action="/coursesAdd" method="post">
                         <div class="mb-3">
-                            <label for="title" class="form-label">Pharmacy title</label>
+                            <label for="title" class="form-label">Course Title</label>
 
-                            <input name="title" type="text" class="form-control" id="title">
+                            <input name="title" type="text" class="form-control" id="title" required placeholder="Course title">
                         </div>
                         <div class="mb-3">
-                            <label for="address" class="form-label">Pharmacy address</label>
+                            <label for="desc" class="form-label">Course About</label>
 
-                            <input name="desc" type="text" class="form-control" id="price" required>
+                            <input name="desc" type="text" class="form-control" id="desc" required placeholder="Courses About">
                         </div>
                         <div class="mb-3">
-                            <label for="color" class="form-label">Img link</label>
+                            <label for="price" class="form-label">Course Price</label>
 
-                            <input name="price" type="text" class="form-control" id="price">
+                            <input name="price" type="text" class="form-control" id="price" required placeholder="Course Price">
                         </div>
 
-                        <button style="display: flex; justify-content:flex-end;" class="btn btn-success courses__add"
-                            type="submit">Add</button>
+                        <button class="btn btn-success courses__add"
+                            type="submit">
+                            Add
+                        </button>
                     </form>
                 </div>
             </div>
 
+            <!-- RIGHT NAVBAR -->
             <%- include("./partials/sidebarRight.ejs",
             {name: foundUser?.username, role: "Admin", phone: foundUser?.phone, photo:  foundUser?.profilePhoto })%>
     </div>
@@ -382,6 +442,7 @@
 
     <script src="assets/style.js"></script>
     <script src="assets/remove.js"></script>
+    <script src="assets/admin.js"></script>
 </body>
 
 </html>

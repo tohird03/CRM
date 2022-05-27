@@ -10,6 +10,7 @@ const GET_TEACHER = (req, res) => {
             return res.redirect('/admin')
         }
 
+        // FOUND COURSE, FOUND TEACHER
         const foundUser = read('users.json').find(e => e.id == id)
         const allGroups = read('group.json')
         const allCourses = read('courses.json')
@@ -18,7 +19,22 @@ const GET_TEACHER = (req, res) => {
         const foundCours = foundGroups.filter(e => allCourses.find(id => id.id == e.coursId) ? e.course = allCourses.find(id => id.id == e.coursId)
         : e)
 
-        res.render('teacher', { foundUser, foundCours })
+        // FOUND TEACHER HOMEWORK
+        const studentHomeTask = read("studentHomework.json")
+        const teacherHomeTask  = read("homework.json")
+        const rating  = read("rating.json")
+
+        const userGroup = read('group.json').filter(e => e.teachId == foundUser.id)
+        const studentFoundHomework = read("studentHomework.json").filter(e => read('users.json').find(d => d.id == e.studentId) ? e.groups = read('users.json').find(d => d.id == e.studentId) : null)
+
+        const teacherGroupsHomeTask = studentFoundHomework.filter(e => userGroup.find(d => d.groups == e.groups.group))
+
+        // TEACHER STUDENTS RATING
+        const isNanTeachHomeTask = teacherGroupsHomeTask.filter(e => !rating.find(d => e.studentId == d.studentId && e.homeworkId == d.homeworkId))
+
+        const isTeachHomeTask = teacherGroupsHomeTask.filter(e => rating.find(d => e.studentId == d.studentId && e.homeworkId == d.homeworkId))
+
+        res.render('teacher', { foundUser, foundCours, teacherGroupsHomeTask, isNanTeachHomeTask, isTeachHomeTask, allGroups })
     } catch (error) {
         throw new Error(error)
     }

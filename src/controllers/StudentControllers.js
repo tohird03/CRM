@@ -26,7 +26,12 @@ const GET_STUDENT = (req, res) => {
         const allHomeworkTrue = home.filter(e => !studentHome.find(d => d.homeworkId == e.id) ? e.send = "false" : studentHome.find(d => d.homeworkId == e.id) ? e.send = "true" : null
         )
 
-        res.render('student', { foundUser, home, allHomeworkTrue, studentHome, studentHomeTaskIsNot })
+        // STUDUNT RATINGS
+        const rating = read("rating.json").filter(e => e.studentId == foundUser.id)
+
+        const foundStudentGrade = read("studentHomework.json").filter(e => rating.find(d => d.homeworkId == e.homeworkId && d.studentId == e.studentId) ? e.grade = rating.find(d => d.homeworkId == e.homeworkId && d.studentId == e.studentId) : null)
+
+        res.render('student', { foundUser, home, allHomeworkTrue, studentHome, studentHomeTaskIsNot, foundStudentGrade })
     } catch (error) {
         throw new Error(error)
     }

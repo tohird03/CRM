@@ -9,7 +9,6 @@ const GET_LOGIN = (req, res) => {
 
 const POST_LOGIN = (req, res) => {
     const { user } = req
-    console.log(user);
     if(user.role == "admin"){
         res.cookie('token', sign({ id: user.id, role: user.role }), {
             maxAge: 30 * 24 * 60 * 60 * 1000

@@ -14,7 +14,7 @@ elSideBarList.addEventListener("click", e => {
     } else if(e.target.id == "Homework") {
         elStudentHomewrok.classList.remove("d-none")
         elStudent.classList.add("d-none")
-        elLinkStudent
+        
         elLinkStudent.classList.remove("active")
         elLinkHomework.classList.add("active")
     }

@@ -10,6 +10,7 @@ const GroupController = require("../controllers/GroupController")
 const CoursesController = require("../controllers/CoursesControllers")
 const HomeworkController = require("../controllers/HomeworkController")
 const UploadController = require("../controllers/UploadController")
+const RatingController = require("../controllers/RatingController")
 
 const verifyToken = require("../middlewares/verifyToken")
 const verifyRole = require("../middlewares/verifyRole")
@@ -30,5 +31,6 @@ router
     .post("/coursesAdd", verifyToken, CoursesController.COURSES_ADD)
     .post("/homeworkAdd", verifyToken, HomeworkController.HOMEWORK_ADD)
     .post("/upload", verifyToken, UploadController.UPLOAD_FILE)
+    .post("/rating", verifyToken, RatingController.RATING_STUDENT)
 
 module.exports = router

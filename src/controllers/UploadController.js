@@ -21,11 +21,13 @@ const UPLOAD_FILE = (req, res) => {
         homeworkId: groupId?.split("/")[0],
         homeFile: `http://localhost:9000/assets/${homeFile.name}`,
         title: title,
-        date: controlDate
+        date: controlDate,
+        size: `${Math.floor(homeFile.size / 1000)/1000}mb`
     }
 
     studentHomework.unshift(sendStudentHomework)
     write("studentHomework.json", studentHomework)
+    
     res.redirect("student")
 }
 

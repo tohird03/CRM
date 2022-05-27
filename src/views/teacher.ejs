@@ -16,9 +16,9 @@
 <body>
     <div class="app-container">
         <%- include("./partials/sidebar.ejs", { navlink: [ {iconName: "group" , linkName: "Groups" , isActive: "active"
-            } ]})%>
+            }, {iconName: "library_books" , linkName: "Homeworks" , isActive: "" } ]})%>
 
-            <!-- ADD GROUP -->
+            <!-- GROUP -->
             <div class="app-main add_groups">
                 <div class="main-header-line">
                     <div class="app-content-header">
@@ -82,19 +82,21 @@
                                             <div class="mb-3">
                                                 <label for="title" class="form-label">Pharmacy title</label>
 
-                                                <input name="title" type="text" class="form-control" id="title" placeholder="Homework title">
+                                                <input name="title" type="text" class="form-control" id="title"
+                                                    placeholder="Homework title">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="title" class="form-label">Pharmacy title</label>
 
-                                                <textarea class="homework__add" name="desc" placeholder="Homework about" ></textarea>
+                                                <textarea class="homework__add" name="desc"
+                                                    placeholder="Homework about"></textarea>
                                             </div>
 
                                             <div class="mb-3">
                                                 <input type="text" name="groupId" class="visually-hidden homeworkId">
                                             </div>
 
-                                            <button id=<%= group?.id %>  style="display: flex; justify-content:flex-end;"
+                                            <button id=<%=group?.id %> style="display: flex; justify-content:flex-end;"
                                                 class="btn btn-success homework__btn courses__add" type="submit">
                                                 Add
                                             </button>
@@ -102,7 +104,130 @@
                                     </div>
                                 </div>
                             </div>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STUDENT HOMEWORKS -->
+            <div class="student__home app-main d-none">
+                <div>
+                    <% isNanTeachHomeTask?.map(group=> { %>
+                        <div class="card">
+                            <div class="card-body">
+                                <h1 class="group__name">GURUH <%= group?.groups?.group %>
+                                </h1>
+                                <div class="overline">
+                                    O'quvchi: <%= group?.groups?.username?.slice(0, 1)?.toUpperCase() +
+                                        group?.groups?.username?.slice(1) %>
+                                </div>
+                                <div class="overline">Sanasi: <%= group?.date %>
+                                </div>
+                                <div class="overline">Nomi: <%= group?.title %>
+                                </div>
+                                <div class="card-title">
+
+                                </div>
+                            </div>
+                            <!-- CARD FOOTER -->
+                            <div class="card-footer">
+                                <a class="face-button" href=<%= group?.homeFile %> download>
+                                    <div class="face-primary">
+                                        <span class="icon fa fa-cloud"></span>
+                                        Download
+                                    </div>
+
+                                    <div class="face-secondary">
+                                        <span class="icon fa fa-hdd-o"></span>
+                                        Size: <%= group?.size %>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- ADD GRADE -->
+                            <div>
+                                <form class="rating" action="/rating" method="post">
+                                    <label class="rating_label">
+                                        0
+                                        <input required type="radio" name="rating" value=<%= 0 + "/" + group?.studentId + "/" + group?.homeworkId %>>
+                                    </label>
+                                    <label class="rating_label">
+                                        1
+                                        <input required type="radio" name="rating" value=<%= 1 + "/" + group?.studentId + "/" + group?.homeworkId %>>
+                                    </label>
+                                    <label class="rating_label">
+                                        2
+                                        <input required type="radio" name="rating" value=<%= 2 + "/" + group?.studentId + "/" + group?.homeworkId %>>
+                                    </label>
+                                    <label class="rating_label">
+                                        3
+                                        <input required type="radio" name="rating" value=<%= 3 + "/" + group?.studentId + "/" + group?.homeworkId %>>
+                                    </label>
+                                    <label class="rating_label">
+                                        4
+                                        <input required type="radio" name="rating" value=<%= 4 + "/" + group?.studentId + "/" + group?.homeworkId %>>
+                                    </label>
+                                    <label class="rating_label">
+                                        5
+                                        <input required type="radio" name="rating" value=<%= 5 + "/" + group?.studentId + "/" + group?.homeworkId %>>
+                                    </label>
+
+                                    <button type="submit">Baholash</button>
+                                </form>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+
+                <div>
+                    <!-- Table content Tekshirilgan vazifalar -->
+                    <h3 class="green">Tekshirilgan vazifalar</h3>
+                    <div class="app-content">
+                        <div class="products-area-wrapper tableView">
+                            <div class="products-header">
+                                <div class="product-cell image t-center">Group Title</div>
+                                <div class="product-cell image t-center">Student Name</div>
+                                <div class="product-cell category t-center">Homework Title</div>
+                                <div class="product-cell stock t-center">Download</div>
+                                <div class="product-cell stock t-center">Size</div>
+                                <div class="product-cell stock t-center">Send date</div>
+                            </div>
+
+                            <% isTeachHomeTask?.map(group=> { %>
+                                <div class="products-row">
+                                    <div class="product-cell image">
+
+                                        <span>
+                                            <%= group?.groups?.group %>
+                                        </span>
+                                    </div>
+                                    <div class="product-cell image">
+                                        <span>
+                                            <%= group?.groups?.username?.slice(0, 1)?.toUpperCase() + group?.groups?.username?.slice(1)?.toLowerCase() %>
+                                        </span>
+                                    </div>
+                                    <div class="product-cell image">
+                                        <span>
+                                            <%= group?.title %>
+                                        </span>
+                                    </div>
+                                    <div class="product-cell category"><span class="cell-label">Category:</span>
+                                        <a href=<%= group?.homeFile %>  class="material-symbols-outlined download_student-homework"  download>
+                                            file_download
+                                        </a>
+                                    </div>
+                                    <div class="product-cell status-cell">
+                                        <span class="cell-label">Status</span>
+                                        <span class="status active">
+                                            <%= group?.size %>
+                                        </span>
+                                    </div>
+                                    <div class="product-cell stock"><span class="cell-label">Stock:</span>
+                                        <%= group?.date %>
+                                    </div>
+                                </div>
                             <% }) %>
+                        </div>
                     </div>
                 </div>
             </div>
