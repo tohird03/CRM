@@ -36,15 +36,6 @@
         "profilePhoto": ""
     },
     {
-        "id": 5,
-        "username": "Alimardon",
-        "password": "aaaabbbb",
-        "phone": "998669608",
-        "role": "teacher",
-        "course": "photoshop",
-        "profilePhoto": ""
-    },
-    {
         "id": 6,
         "username": "G'ani",
         "password": "ganigani",
@@ -71,7 +62,7 @@
         "phone": "998906696604",
         "role": "student",
         "course": "foundation",
-        "group": "F1",
+        "group": "F2",
         "profilePhoto": ""
     },
     {
@@ -87,7 +78,7 @@
     {
         "id": 10,
         "username": "Bekzod",
-        "password": "bekzodbekzod",
+        "password": "aaaassss",
         "phone": "998663433244",
         "role": "student",
         "course": "web",
@@ -102,16 +93,6 @@
         "role": "student",
         "course": "web",
         "group": "W2",
-        "profilePhoto": ""
-    },
-    {
-        "id": 12,
-        "username": "diyor",
-        "password": "diyordiyor",
-        "phone": "435534555435",
-        "role": "student",
-        "course": "photoshop",
-        "group": "P1",
         "profilePhoto": ""
     }
 ]

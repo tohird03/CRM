@@ -1,10 +1,199 @@
 [
     {
+        "id": 26,
+        "studentId": "11",
+        "homeworkId": "24",
+        "homeFile": "http://localhost:9000/assets/2.2.jpg",
+        "title": "Postgresql",
+        "date": "28-05-2022",
+        "size": "0.197mb"
+    },
+    {
+        "id": 25,
+        "studentId": "11",
+        "homeworkId": "6",
+        "homeFile": "http://localhost:9000/assets/2.2.jpg",
+        "title": "Bajardim",
+        "date": "28-05-2022",
+        "size": "0.197mb"
+    },
+    {
+        "id": 24,
+        "studentId": "11",
+        "homeworkId": "25",
+        "homeFile": "http://localhost:9000/assets/1.5.jpg",
+        "title": "Mustaqil",
+        "date": "28-05-2022",
+        "size": "0.198mb"
+    },
+    {
+        "id": 23,
+        "studentId": "10",
+        "homeworkId": "21",
+        "homeFile": "http://localhost:9000/assets/2.4.jpg",
+        "title": "Html ",
+        "date": "28-05-2022",
+        "size": "0.201mb"
+    },
+    {
+        "id": 22,
+        "studentId": "10",
+        "homeworkId": "7",
+        "homeFile": "http://localhost:9000/assets/1.jpg",
+        "title": "Tushunmadim",
+        "date": "28-05-2022",
+        "size": "0.19mb"
+    },
+    {
+        "id": 21,
+        "studentId": "10",
+        "homeworkId": "22",
+        "homeFile": "http://localhost:9000/assets/2.2.jpg",
+        "title": "Css ",
+        "date": "28-05-2022",
+        "size": "0.197mb"
+    },
+    {
+        "id": 20,
+        "studentId": "8",
+        "homeworkId": "21",
+        "homeFile": "http://localhost:9000/assets/1.jpg",
+        "title": "Html",
+        "date": "28-05-2022",
+        "size": "0.19mb"
+    },
+    {
+        "id": 19,
+        "studentId": "8",
+        "homeworkId": "22",
+        "homeFile": "http://localhost:9000/assets/2.2.jpg",
+        "title": "Css qildim",
+        "date": "28-05-2022",
+        "size": "0.197mb"
+    },
+    {
+        "id": 18,
+        "studentId": "8",
+        "homeworkId": "2",
+        "homeFile": "http://localhost:9000/assets/1.2.jpg",
+        "title": "Socket",
+        "date": "28-05-2022",
+        "size": "0.164mb"
+    },
+    {
+        "id": 17,
+        "studentId": "8",
+        "homeworkId": "23",
+        "homeFile": "http://localhost:9000/assets/1.5.jpg",
+        "title": "Nodejs",
+        "date": "28-05-2022",
+        "size": "0.198mb"
+    },
+    {
+        "id": 16,
+        "studentId": "9",
+        "homeworkId": "8",
+        "homeFile": "http://localhost:9000/assets/1.4.jpg",
+        "title": "Htmlni urgandim",
+        "date": "28-05-2022",
+        "size": "0.141mb"
+    },
+    {
+        "id": 15,
+        "studentId": "9",
+        "homeworkId": "16",
+        "homeFile": "http://localhost:9000/assets/1.3.jpg",
+        "title": "Yana qildim",
+        "date": "28-05-2022",
+        "size": "0.176mb"
+    },
+    {
+        "id": 14,
+        "studentId": "9",
+        "homeworkId": "18",
+        "homeFile": "http://localhost:9000/assets/1.1.jpg",
+        "title": "Postgresql",
+        "date": "28-05-2022",
+        "size": "0.182mb"
+    },
+    {
+        "id": 13,
+        "studentId": "9",
+        "homeworkId": "19",
+        "homeFile": "http://localhost:9000/assets/1.4.jpg",
+        "title": "Erkin mavzu",
+        "date": "28-05-2022",
+        "size": "0.141mb"
+    },
+    {
+        "id": 12,
+        "studentId": "9",
+        "homeworkId": "20",
+        "homeFile": "http://localhost:9000/assets/1.5.jpg",
+        "title": "Portfolio",
+        "date": "28-05-2022",
+        "size": "0.198mb"
+    },
+    {
+        "id": 11,
+        "studentId": "2",
+        "homeworkId": "14",
+        "homeFile": "http://localhost:9000/assets/2.9.jpg",
+        "title": "Express",
+        "date": "28-05-2022",
+        "size": "0.19mb"
+    },
+    {
+        "id": 10,
+        "studentId": "6",
+        "homeworkId": "16",
+        "homeFile": "http://localhost:9000/assets/1.4.jpg",
+        "title": "Erkin mavzu",
+        "date": "28-05-2022",
+        "size": "0.141mb"
+    },
+    {
+        "id": 9,
+        "studentId": "6",
+        "homeworkId": "8",
+        "homeFile": "http://localhost:9000/assets/2.1.pdf",
+        "title": "Tugatdim",
+        "date": "28-05-2022",
+        "size": "3.324mb"
+    },
+    {
+        "id": 8,
+        "studentId": "6",
+        "homeworkId": "11",
+        "homeFile": "http://localhost:9000/assets/1.2.jpg",
+        "title": "Cssda",
+        "date": "28-05-2022",
+        "size": "0.164mb"
+    },
+    {
+        "id": 7,
+        "studentId": "6",
+        "homeworkId": "10",
+        "homeFile": "http://localhost:9000/assets/1.4.jpg",
+        "title": "Bootstrapda",
+        "date": "28-05-2022",
+        "size": "0.141mb"
+    },
+    {
+        "id": 6,
+        "studentId": "6",
+        "homeworkId": "9",
+        "homeFile": "http://localhost:9000/assets/2.2.jpg",
+        "title": "Css",
+        "date": "28-05-2022",
+        "size": "0.197mb"
+    },
+    {
         "id": 5,
         "studentId": "7",
         "homeworkId": "14",
         "homeFile": "http://localhost:9000/assets/2.jpg",
-        "title": "Express ham buldi",
+        "title": "Expressda",
         "date": "27-05-2022",
         "size": "0.209mb"
     },
@@ -13,7 +202,7 @@
         "studentId": "7",
         "homeworkId": "12",
         "homeFile": "http://localhost:9000/assets/5.jpg",
-        "title": "Javascripti vazifasini tugatdim",
+        "title": "Javascript",
         "date": "27-05-2022",
         "size": "0.18mb"
     },
@@ -22,7 +211,7 @@
         "studentId": "7",
         "homeworkId": "15",
         "homeFile": "http://localhost:9000/assets/10.jpg",
-        "title": "Nodejs ni tugatdim",
+        "title": "Nodejs",
         "date": "27-05-2022",
         "size": "0.204mb"
     },

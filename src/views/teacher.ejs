@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="/assets/navbar.css">
     <link rel="stylesheet" href="/assets/style.css">
 
+    <script
+          src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous">
+    </script>
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Admin</title>
@@ -88,8 +94,7 @@
                                                 <div class="mb-3">
                                                     <label for="desc" class="form-label">Homework about</label>
 
-                                                    <textarea class="homework__add" name="desc" placeholder="Homework about" required id="desc">
-                                                    </textarea>
+                                                    <textarea class="homework__add" name="desc" placeholder="Homework about" required id="desc"></textarea>
                                                 </div>
 
                                                 <div class="mb-3">
@@ -111,75 +116,95 @@
 
             <!-- STUDENT HOMEWORKS -->
             <div class="student__home app-main d-none">
-                <div class="student__homeCard">
-                    <% isNanTeachHomeTask?.map(group=> { %>
-                        <div class="card">
-                            <div class="card-body">
-                                <h1 class="group__name">GURUH <%= group?.groups?.group %>
-                                </h1>
-                                <div class="overline">
-                                    O'quvchi: <%= group?.groups?.username?.slice(0, 1)?.toUpperCase() +
-                                        group?.groups?.username?.slice(1) %>
-                                </div>
-                                <div class="overline">Sanasi: <%= group?.date %>
-                                </div>
-                                <div class="overline">Nomi: <%= group?.title %>
-                                </div>
-                                <div class="card-title">
 
-                                </div>
+                <!-- NAVBAR TOP -->
+                <nav class="navbar navbar-expand-custom navbar-mainbg">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto" style="margin: auto;">
+                            <div class="hori-selector">
+                                <div class="left"></div>
+                                <div class="right"></div>
                             </div>
-                            <!-- CARD FOOTER -->
-                            <div class="card-footer">
-                                <a class="face-button" href=<%= group?.homeFile %> download>
-                                    <div class="face-primary">
-                                        <span class="icon fa fa-cloud"></span>
-                                        Download
-                                    </div>
-
-                                    <div class="face-secondary">
-                                        <span class="icon fa fa-hdd-o"></span>
-                                        Size: <%= group?.size %>
-                                    </div>
+                            <li class="nav-item active not__grade-sentNav">
+                                <a class="nav-link not__grade-sentNav" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>
+                                    Tekshirilmagan vazifalar
                                 </a>
-                            </div>
+                            </li>
+                            <li class="nav-item grade__sentNav">
+                                <a class="nav-link grade__sentNav" href="javascript:void(0);"><i class="far fa-address-book"></i>Tekshirilgan vazifalar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
 
-                            <!-- ADD GRADE -->
-                            <div>
-                                <form class="rating" action="/rating" method="post">
-                                    <label class="rating_label">
-                                        0
-                                        <input required type="radio" name="rating" value=<%= 0 + "/" + group?.studentId + "/" + group?.homeworkId %>>
-                                    </label>
-                                    <label class="rating_label">
-                                        1
-                                        <input required type="radio" name="rating" value=<%= 1 + "/" + group?.studentId + "/" + group?.homeworkId %>>
-                                    </label>
-                                    <label class="rating_label">
-                                        2
-                                        <input required type="radio" name="rating" value=<%= 2 + "/" + group?.studentId + "/" + group?.homeworkId %>>
-                                    </label>
-                                    <label class="rating_label">
-                                        3
-                                        <input required type="radio" name="rating" value=<%= 3 + "/" + group?.studentId + "/" + group?.homeworkId %>>
-                                    </label>
-                                    <label class="rating_label">
-                                        4
-                                        <input required type="radio" name="rating" value=<%= 4 + "/" + group?.studentId + "/" + group?.homeworkId %>>
-                                    </label>
-                                    <label class="rating_label">
-                                        5
-                                        <input required type="radio" name="rating" value=<%= 5 + "/" + group?.studentId + "/" + group?.homeworkId %>>
-                                    </label>
+                <div class="grade__notsent">
+                    <div class="student__homeCard ">
+                        <% isNanTeachHomeTask?.map(group=> { %>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h1 class="group__name">GURUH <%= group?.groups?.group %>
+                                    </h1>
+                                    <div class="overline">
+                                        O'quvchi: <%= group?.groups?.username?.slice(0, 1)?.toUpperCase() +
+                                            group?.groups?.username?.slice(1) %>
+                                    </div>
+                                    <div class="overline">Sanasi: <%= group?.date %>
+                                    </div>
+                                    <div class="overline">Nomi: <%= group?.title %>
+                                    </div>
+                                </div>
+                                <!-- CARD FOOTER -->
+                                <div class="card-footer">
+                                    <a class="face-button" href=<%= group?.homeFile %> download>
+                                        <div class="face-primary">
+                                            <span class="icon fa fa-cloud"></span>
+                                            Download
+                                        </div>
 
-                                    <button type="submit">Baholash</button>
-                                </form>
+                                        <div class="face-secondary">
+                                            <span class="icon fa fa-hdd-o"></span>
+                                            Size: <%= group?.size %>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- ADD GRADE -->
+                                <div>
+                                    <form class="rating" action="/rating" method="post">
+                                        <label class="rating_label">
+                                            0
+                                            <input required type="radio" name="rating" value=<%= 0 + "/" + group?.studentId + "/" + group?.homeworkId %>>
+                                        </label>
+                                        <label class="rating_label">
+                                            1
+                                            <input required type="radio" name="rating" value=<%= 1 + "/" + group?.studentId + "/" + group?.homeworkId %>>
+                                        </label>
+                                        <label class="rating_label">
+                                            2
+                                            <input required type="radio" name="rating" value=<%= 2 + "/" + group?.studentId + "/" + group?.homeworkId %>>
+                                        </label>
+                                        <label class="rating_label">
+                                            3
+                                            <input required type="radio" name="rating" value=<%= 3 + "/" + group?.studentId + "/" + group?.homeworkId %>>
+                                        </label>
+                                        <label class="rating_label">
+                                            4
+                                            <input required type="radio" name="rating" value=<%= 4 + "/" + group?.studentId + "/" + group?.homeworkId %>>
+                                        </label>
+                                        <label class="rating_label">
+                                            5
+                                            <input required type="radio" name="rating" value=<%= 5 + "/" + group?.studentId + "/" + group?.homeworkId %>>
+                                        </label>
+
+                                        <button type="submit" class="grade_homework">Baholash</button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                    <% }) %>
+                        <% }) %>
+                    </div>
                 </div>
 
-                <div>
+                <div class="grade__sent d-none">
                     <!-- Table content Tekshirilgan vazifalar -->
                     <h3 class="green">Tekshirilgan vazifalar</h3>
                     <div class="app-content">
@@ -232,9 +257,9 @@
                 </div>
             </div>
 
+            <!-- RIGHT NAVBAR -->
             <%- include("./partials/sidebarRight.ejs", {name: foundUser?.username, role: "Admin" , phone:
-                foundUser?.phone, photo: foundUser?.profilePhoto })%>
-    </div>
+            foundUser?.phone, photo: foundUser?.profilePhoto })%>
     </div>
 
     <script src="assets/teacher.js"></script>

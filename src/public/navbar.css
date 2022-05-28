@@ -447,7 +447,7 @@ body {
   display: flex;
   align-items: center;
   border-radius: 4px;
-  background-color: var(--app-content-secondary-color);
+  background-color: rgb(4, 4, 183);
   position: sticky;
   top: 0;
 }
@@ -458,7 +458,7 @@ body {
 }
 .tableView .products-row:hover {
   box-shadow: var(--filter-shadow);
-  background-color: var(--app-content-secondary-color);
+  background-color: rgb(0, 34, 73);
 }
 .tableView .products-row .cell-more-button {
   display: none;

@@ -1,65 +1,135 @@
 [
     {
+        "id": 25,
+        "groupId": 5,
+        "title": "Mustaqil ish",
+        "desc": "Website",
+        "date": "28-05-2022"
+    },
+    {
+        "id": 24,
+        "groupId": 5,
+        "title": "Postgresql ",
+        "desc": "W2 urganib kelinglar",
+        "date": "28-05-2022"
+    },
+    {
+        "id": 23,
+        "groupId": 3,
+        "title": "Node js ",
+        "desc": "O'rganib kelinglar",
+        "date": "28-05-2022"
+    },
+    {
+        "id": 22,
+        "groupId": 3,
+        "title": "Css",
+        "desc": "W1 guruhi bajaringlar",
+        "date": "28-05-2022"
+    },
+    {
+        "id": 21,
+        "groupId": 3,
+        "title": "Html ",
+        "desc": "W1 guruhi bajaringlar",
+        "date": "28-05-2022"
+    },
+    {
+        "id": 20,
+        "groupId": 2,
+        "title": "Portfolio sayt ",
+        "desc": "Bajarish shart F2 guruhi",
+        "date": "28-05-2022"
+    },
+    {
+        "id": 19,
+        "groupId": 2,
+        "title": "Erkin mavzu",
+        "desc": "Xohlagan vazifani qilish                                                    ",
+        "date": "28-05-2022"
+    },
+    {
+        "id": 18,
+        "groupId": 2,
+        "title": "Postgresql",
+        "desc": "Mustaqil                                                    ",
+        "date": "28-05-2022"
+    },
+    {
+        "id": 17,
+        "groupId": 2,
+        "title": "Mongos",
+        "desc": "Bajarish shart                                                    ",
+        "date": "28-05-2022"
+    },
+    {
+        "id": 16,
+        "groupId": 2,
+        "title": "Erkin mavzuda",
+        "desc": "Qilinglar                                                    ",
+        "date": "28-05-2022"
+    },
+    {
         "id": 15,
         "groupId": 1,
         "title": "Node js",
-        "desc": "Server ko'tarish                                                   ",
+        "desc": "Server ko'tarish",
         "date": "27-05-2022"
     },
     {
         "id": 14,
         "groupId": 1,
         "title": "Express",
-        "desc": "Hammangiz qiling                                                  ",
+        "desc": "Hammangiz qiling",
         "date": "27-05-2022"
     },
     {
         "id": 13,
         "groupId": 1,
         "title": "Bootstrap",
-        "desc": " xohlagan vazifa qailish                                                   ",
+        "desc": " xohlagan vazifa qailish",
         "date": "27-05-2022"
     },
     {
         "id": 12,
         "groupId": 1,
         "title": "Javascriptni ko'rib kenglar",
-        "desc": "Shart F1                                    ",
+        "desc": "Shart F1",
         "date": "27-05-2022"
     },
     {
         "id": 11,
         "groupId": 2,
         "title": "Scssni o'qib keling",
-        "desc": "Bajaringlar                                             ",
+        "desc": "Bajaringlar",
         "date": "27-05-2022"
     },
     {
         "id": 10,
         "groupId": 2,
         "title": "Bootstrap",
-        "desc": "           Shartli qilinglar F2 guruh                                         ",
+        "desc": "Shartli qilinglar F2 guruh",
         "date": "27-05-2022"
     },
     {
         "id": 9,
         "groupId": 2,
         "title": "Css",
-        "desc": "  Bajaringlar                                                  ",
+        "desc": "  Bajaringlar ",
         "date": "27-05-2022"
     },
     {
         "id": 8,
         "groupId": 2,
         "title": "Html qilinglar",
-        "desc": "Bajaringlar                                          ",
+        "desc": "Bajaringlar",
         "date": "27-05-2022"
     },
     {
         "id": 7,
         "groupId": 3,
         "title": "asd",
-        "desc": "                                                ",
+        "desc": "",
         "date": "27-05-2022"
     },
     {
